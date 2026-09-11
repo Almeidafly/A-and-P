@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A and P — catalog every pound that could go to Mars</title>
+  <meta name="description" content="A and P is a Mars infrastructure catalog. A is the algorithm n = 1 + 0. P is the pound. Sell the cost savings of one index, one unit, no row zero." />
+  <link rel="icon" href="assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top"><img src="assets/logo-square.jpg" alt="A and P" /> A and P</a>
+      <nav class="nav-links">
+        <a href="#savings">Savings</a>
+        <a href="#calc">Calculator</a>
+        <a href="#catalog">Catalog</a>
+        <a href="#buy">Get it</a>
+      </nav>
+      <a class="btn" href="#buy">Get A and P</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="wrap hero">
+      <div>
+        <div class="rule">A = 1 + 0 &nbsp;·&nbsp; P = 1 lb &nbsp;·&nbsp; n ≠ 0</div>
+        <h1>Stop paying for unique Mars cargo. Catalog it in pounds.</h1>
+        <p class="lead">A and P is a could-go infrastructure catalog. Every possible habitat tile, power brick, rover part, and repair kit sits on the same index. You compare, drop, and buy mass before you fly uniqueness.</p>
+        <a class="btn" href="#calc">Run the savings model</a>
+        <a class="btn ghost" href="https://github.com/fitzyracing1/A-and-P" style="margin-left:8px">Clone the system</a>
+      </div>
+      <img class="hero-mark" src="assets/logo.jpg" alt="A and P mark" />
+    </div>
+
+    <div class="wrap stats">
+      <div class="stat"><b>n = 1 + 0</b><span>First item is one. Empty is not an address.</span></div>
+      <div class="stat"><b>1 pound</b><span>One unit for every could-go piece of infrastructure.</span></div>
+      <div class="stat"><b>50 seed rows</b><span>Core, enabling, optional — not a flight list.</span></div>
+    </div>
+
+    <section class="wrap" id="savings">
+      <h2>Where the money comes back</h2>
+      <p class="sub">Most Mars cost is not the last pound on the lander. It is unique design, unused flown mass, and loss sized to a whole module. A and P attacks those three lines.</p>
+      <div class="vs">
+        <div class="card bad">
+          <h3>Without A and P</h3>
+          <ul>
+            <li>Each crate is its own qualified article</li>
+            <li>Load plans do not share an index</li>
+            <li>Optional science rides because it was already designed</li>
+            <li>One failed entry writes off a two-ton object</li>
+          </ul>
+        </div>
+        <div class="card good">
+          <h3>With A and P</h3>
+          <ul>
+            <li>Design the interface once. Rows share n and P</li>
+            <li>Filter class before you spend NRE</li>
+            <li>Leave Optional on Earth until Core works</li>
+            <li>A loss event is sized to one catalog pound, not a habitat</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" id="calc">
+      <h2>Cost-savings calculator</h2>
+      <p class="sub">Planning model. Blue fields are yours. Change them to match a campaign. This is not a NASA quote and not a bid.</p>
+      <div class="calc">
+        <div class="fields">
+          <div>
+            <label>Unique designs in a traditional plan</label>
+            <input id="unique" type="number" value="40" min="0" />
+          </div>
+          <div>
+            <label>NRE per unique qualified item (USD)</label>
+            <input id="nre" type="number" value="250000" min="0" />
+          </div>
+          <div>
+            <label>A and P catalog items that cover the same job</label>
+            <input id="catalogItems" type="number" value="12" min="0" />
+          </div>
+          <div>
+            <label>Unused mass you no longer fly (lb)</label>
+            <input id="unusedLb" type="number" value="400" min="0" />
+          </div>
+          <div>
+            <label>Planning rate, USD per catalog-lb delivered</label>
+            <input id="perLb" type="number" value="50000" min="0" />
+          </div>
+          <div>
+            <label>Traditional module at risk in one loss (lb)</label>
+            <input id="moduleLb" type="number" value="2200" min="0" />
+          </div>
+          <div>
+            <label>Planning loss probability (%)</label>
+            <input id="pLoss" type="number" value="5" min="0" max="100" step="0.1" />
+          </div>
+        </div>
+        <div class="out">
+          <div><b id="nreSaved">—</b><span>NRE not spent on extra unique articles<br>Designs avoided: <i id="designsAvoided">—</i></span></div>
+          <div><b id="unusedSaved">—</b><span>Unused mass not flown</span></div>
+          <div><b id="lossSaved">—</b><span>Expected loss sized to 1 lb vs the module</span></div>
+          <div><b id="totalSaved">—</b><span>Planning total returned</span></div>
+        </div>
+        <p class="note">Default rate $50,000 / lb is an illustrative surface-delivery planning number. Historical flagship missions can run higher. A high-cadence lander can run lower. Put your own number in.</p>
+      </div>
+    </section>
+
+    <section class="wrap" id="catalog">
+      <h2>The catalog, not the ship</h2>
+      <p class="sub">A is the algorithm. P is the pound and the packet ceiling. Rows 1–50 ship in the workbook. Next empty index is 51.</p>
+      <div class="card" style="overflow:auto">
+        <table>
+          <thead>
+            <tr><th>n</th><th>Category</th><th>Item</th><th>lb</th><th>Class</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Habitat</td><td>Unpressurized deck tile</td><td>1</td><td><span class="tag core">Core</span></td></tr>
+            <tr><td>5</td><td>Power</td><td>Solar brick</td><td>1</td><td><span class="tag core">Core</span></td></tr>
+            <tr><td>10</td><td>Mobility</td><td>Small rover chassis</td><td>25</td><td><span class="tag enab">Enabling</span></td></tr>
+            <tr><td>13</td><td>Life support</td><td>Water recycler brick</td><td>12</td><td><span class="tag core">Core</span></td></tr>
+            <tr><td>18</td><td>Comms</td><td>Local mesh node</td><td>1</td><td><span class="tag enab">Enabling</span></td></tr>
+            <tr><td>20</td><td>Manufacture</td><td>ISRU feedstock bag</td><td>1</td><td><span class="tag enab">Enabling</span></td></tr>
+            <tr><td>26</td><td>Safety</td><td>Repair tool kit</td><td>6</td><td><span class="tag core">Core</span></td></tr>
+            <tr><td>42</td><td>Mobility</td><td>Leg / walk packet</td><td>8</td><td><span class="tag opt">Optional</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="wrap" id="buy">
+      <h2>Get the system. Keep the savings.</h2>
+      <p class="sub">The method is the product. The seed catalog is open so teams can clone it. Paid tiers buy the savings model in a form you can take into a program review.</p>
+      <div class="prices">
+        <div class="price">
+          <h3>Clone</h3>
+          <div class="amt">$0</div>
+          <ul>
+            <li>MIT license</li>
+            <li>50-row catalog + workbook</li>
+            <li>n = 1 + 0 rule set</li>
+            <li>Rebuild script</li>
+          </ul>
+          <a class="btn ghost" href="https://github.com/fitzyracing1/A-and-P">Open the repo</a>
+        </div>
+        <div class="price featured">
+          <h3>Planner</h3>
+          <div class="amt">$490</div>
+          <ul>
+            <li>Everything in Clone</li>
+            <li>This savings calculator as a working sheet</li>
+            <li>Class filter for Core-only first site</li>
+            <li>Email the filled matrix back with your rates</li>
+          </ul>
+          <a class="btn" href="https://github.com/fitzyracing1/A-and-P/issues/new?title=Planner%20license%20%24490">Buy Planner</a>
+        </div>
+        <div class="price">
+          <h3>Program</h3>
+          <div class="amt">$4,900</div>
+          <ul>
+            <li>Everything in Planner</li>
+            <li>Team license for one campaign</li>
+            <li>Custom rows starting at n = 51</li>
+            <li>One working session on your mass mix</li>
+          </ul>
+          <a class="btn ghost" href="https://github.com/fitzyracing1/A-and-P/issues/new?title=Program%20license%20%244900">Buy Program</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      A and P — could-go Mars infrastructure catalog. Not a flight manifest. Planning numbers in the calculator are inputs you control.
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
